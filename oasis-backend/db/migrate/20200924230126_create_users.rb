@@ -9,4 +9,3 @@ class CreateUsers < ActiveRecord::Migration[6.0]
   end
 end
 
-20200924230126_
