@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div> 
+        <div > 
           <NavBar />
           {/* <ParkContainer /> */}
           <Route exact path="/" component={Home} />

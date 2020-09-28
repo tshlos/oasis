@@ -8,11 +8,11 @@ class ParkCollection extends Component {
 
     render() {
         return (
-            <div className="card" >
-                <div className="row">
+            <div>
+                <div>
                     {this.props.parks.map(park => {
                         return (
-                            <div className="align-self-center order-12 p-2"> 
+                            <div> 
                                 <Flippy
                                     flipOnHover={false} 
                                     flipOnClick={true}

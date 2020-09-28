@@ -6,3 +6,10 @@ input[type="radio"] {
   cursor: pointer;
   transition: color 200ms;
 }
+
+.app-grid {
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+
+}
+
