@@ -1,8 +1,8 @@
 class CreateRooftopParks < ActiveRecord::Migration[6.0]
   def change
     create_table :rooftop_parks do |t|
-      t.integer :lat
-      t.integer :long
+      t.float :lat
+      t.float :lng
       t.string :name
       t.string :address
       t.string :state

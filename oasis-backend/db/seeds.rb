@@ -42,8 +42,8 @@ user4 = User.create({
 
 ###ROOF TOP PARKS####
 rp1 = RooftopPark.create({
-    lat:,
-    long:
+    lat:37.793690,
+    lng:-122.401720,
     name: '343 Sansome Rooftop Deck',
     address: '343 Sansome St floor 15',
     state: 'CA',
@@ -54,8 +54,8 @@ rp1 = RooftopPark.create({
 })
 
 rp2 = RooftopPark.create({
-    lat:,
-    long:,
+    lat: 37.7892,
+    lng: -122.3977,
     name: 'Roof Garden',
     address: '100 First Street, 100 1st St',
     state: 'CA',
@@ -66,8 +66,8 @@ rp2 = RooftopPark.create({
 })
 
 rp3 = RooftopPark.create({
-    lat:,
-    long:,
+    lat: 37.7911913,
+    lng: -122.3983658,
     name: 'POPO (Public Rooftop Garden)',
     address: '1 Kearny St',
     state: 'CA',
@@ -78,8 +78,8 @@ rp3 = RooftopPark.create({
 })
 
 rp4 = RooftopPark.create({
-    lat:,
-    long:,
+    lat: 47.4577895,
+    lng: -122.258798014141,
     name: 'Westfield Sky Terrace',
     address: '835 Market St',
     state: 'CA',
@@ -90,8 +90,8 @@ rp4 = RooftopPark.create({
 })
 
 rp5 = RooftopPark.create({
-    lat:,
-    long:,
+    lat:37.785290,
+    lng:-122.395569,
     name: '303 2nd St Plaza',
     address: '303 2nd St',
     state: 'CA',
@@ -102,8 +102,8 @@ rp5 = RooftopPark.create({
 })
 
 rp6 = RooftopPark.create({
-    lat: ,
-    long: ,
+    lat: 47.6228,
+    lng: -122.3340,
     name: "Mbar",
     address: "400 Fairview Ave N",
     state: "Washington",
@@ -114,8 +114,8 @@ rp6 = RooftopPark.create({
 })
 
 rp7 = RooftopPark.create({
-    lat: ,
-    long: ,
+    lat:47.608363 ,
+    lng:-122.332112 ,
     name:"Crowne Plaza Hotel",
     address: "1113 6th Ave",
     state:"Washington",
@@ -126,8 +126,8 @@ rp7 = RooftopPark.create({
 })
 
 rp8 = RooftopPark.create({
-    lat: ,
-    long: ,
+    lat: 47.610668,
+    lng: -122.341309,
     name: "The Nest Rooftop Bar",
     address: "110 Stewart St, Seattle",
     state: "Washington",
@@ -138,8 +138,8 @@ rp8 = RooftopPark.create({
 })
 
 rp9 = RooftopPark.create({
-    lat: ,
-    long: ,
+    lat:47.608518,
+    lng:-122.340603,
     name: "Pike Place Urban Garden",
     address: "81 Pike St.",
     state: "Washington",
@@ -150,8 +150,8 @@ rp9 = RooftopPark.create({
 })
 
 rp10 = RooftopPark.create({
-    lat: ,
-    long: ,
+    lat: 47.605676,
+    lng: -122.333440,
     name: "Fourth and Madison Building",
     address: "925 4th Ave",
     state: "Washington",
