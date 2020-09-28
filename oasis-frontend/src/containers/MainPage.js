@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react';
 import MapContainer from './MapContainer'
+import ParkContainer from './ParkContainer'
 
-class MainPage extends React.Component {
+
+class MainPage extends Component {
     render() {
         return (
         <div>
-            <MapContainer />
+         
+          <MapContainer/>
+          <ParkContainer/>
         </div>
         )
     }
