@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import Home from './containers/Home'
 import MainPage from './containers/MainPage'
 import ParkContainer from './containers/ParkContainer'
+import ParkCollection from './containers/ParkCollection'
 
 
 class App extends Component {
@@ -13,10 +14,10 @@ class App extends Component {
     return (
       <Router>
         <div> 
-          <h1> hello from App </h1>
-          {/* <NavBar /> */}
-          {/* <Home/> */}
-          <ParkContainer />
+          <NavBar />
+          {/* <ParkContainer /> */}
+          <Route exact path="/" component={Home} />
+          <Route path="/rooftop_parks" component={ParkContainer}/>
         </div>
       </Router>
     );

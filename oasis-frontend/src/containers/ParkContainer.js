@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ParkCollection from './ParkCollection';
-import StarRating from '../components/StarRating';
-
 
 const parksURL = 'http://localhost:3000/api/v1/rooftop_parks';
 
