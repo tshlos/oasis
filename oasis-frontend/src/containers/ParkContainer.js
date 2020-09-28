@@ -26,12 +26,16 @@ class ParkContainer extends Component {
 
     render() {
         return (
-            <div>
-                <ParkCollection 
-                    parks={this.state.parks} 
-                    onReviewClick={this.onReviewClick} 
-                />
-                <MapContainer />
+            <div className="app-grid">
+                <div>
+                    <ParkCollection 
+                        parks={this.state.parks} 
+                        onReviewClick={this.onReviewClick} 
+                    /> 
+                </div>
+                <div > 
+                    <MapContainer /> 
+                </div>
             </div>
         )
     }
