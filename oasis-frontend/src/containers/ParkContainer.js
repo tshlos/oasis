@@ -51,7 +51,6 @@ this.setState({
                         onRemoveFavorite={this.onRemoveFavorite}
                         // onReviewClick={this.onReviewClick} 
                     /> 
-                    <StarRating favorite={this.state.favorite}/>
                 </div>
                 <div >
                     <MapContainer parks = {this.state.parks} sortCard ={this.sortCard}/> 
