@@ -4,12 +4,11 @@ input[type="radio"] {
 
 .star {
   cursor: pointer;
-  transition: color 200ms;
 }
 
 .app-grid {
-  display: grid;
-  grid-template-columns: .5fr 1fr;
-
+  /* display: grid; */
+  /* grid-template-columns: .5fr .5fr; */
+  display: flex
 }
 
