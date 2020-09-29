@@ -1,8 +1,15 @@
 import React from 'react';
+import title from './title.png'
+
 
 const Home = () => {
     return (
-        <div><h1>Home</h1></div>
+        <div className = "home">
+            <h1 id="title"><img src = {title} alt = 'title'></img></h1>
+            <h4 id="subtitle"> You're source for free rooftop access in San Francisco and Seattle </h4>
+            <p id="body">This site was created with the direct intent to allow, you the user, direct access to those hard to reach and often times hidden locations within your own city. With Oasis, rooftop access is just a couple clicks away. Navigate to Rooftop parks to view parks near you, add them to your favorites and more.</p>
+        </div>
+
     )
 }
 

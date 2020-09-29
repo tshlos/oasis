@@ -52,8 +52,11 @@ this.setState({
                         // onReviewClick={this.onReviewClick} 
                     /> 
                 </div>
-                <div >
+                <div className="map">
                     <MapContainer parks = {this.state.parks} sortCard ={this.sortCard}/> 
+                </div>
+                <div> 
+                    {/* <FavContainer /> */}
                 </div>
             </div>
         );
