@@ -12,8 +12,8 @@ class ParkCollection extends Component {
                 <div>
                     {this.props.parks.map(park => {
                         return (
-                            <div> 
-                                <Flippy
+                            <div className="ml-3" key={park.id}>
+                                <Flippy 
                                     flipOnHover={false} 
                                     flipOnClick={true}
                                     flipDirection="horizontal" 
@@ -23,15 +23,16 @@ class ParkCollection extends Component {
                                 <FrontSide
                                     style={{ backgroundColor: '#ffffff' }}>
                                     <FrontCard 
-                                        key={park.id} 
                                         park={park} 
+                                        onSelectFavorite={this.props.onSelectFavorite}
+                                        removeFavorite={this.props.removeFavorite}
                                     />
                                 </FrontSide>
                                 <BackSide
                                     style={{ backgroundColor: '#ffffff' }}>
                                     <BackCard 
                                         park={park} 
-                                        onReviewClick={this.props.onReviewClick}
+                                        // onReviewClick={this.props.onReviewClick}
                                     />
                                 </BackSide>
                                 </Flippy>

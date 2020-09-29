@@ -1,32 +1,18 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import FrontCard from './FrontCard';
 
-const StarRating = () => {
-    let [rating, setRating] = useState(null);
-    let [hover, setHover] = useState(null);
+
+const StarRating = (props) => {
+
     return (
-        <div>
-            {[...Array(5)].map((star, i) => {
-                let ratingValue = i + 1;
-                
-                return (
-                    <label>
-                        <input 
-                            type="radio" 
-                            name="rating" 
-                            value={ratingValue} 
-                            onClick={() => setRating(ratingValue)}
-                            />
-                        <FaStar 
-                            className="star" 
-                            size={20} 
-                            color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
-                            onMouseEnter={() => setHover(ratingValue)}
-                            onMouseLeave={() => setHover(null)}
-                        />
-                    </label>
-                );
-            })}
+        <div >     
+            <FaStar 
+                onClick={() => {props.onSelectFavorite ? props.onSelectFavorite(props.park) : props.removeFavorite(props.park)}}
+                className="star" 
+                size={20} 
+                color={props.favorite ? "#ffc107" : "#e4e5e9"}
+            />
         </div>
     )
 }
