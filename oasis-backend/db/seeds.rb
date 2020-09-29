@@ -114,7 +114,7 @@ rp6 = RooftopPark.create({
 })
 
 rp7 = RooftopPark.create({
-    lat:47.608363 ,
+    lat:47.608363,
     lng:-122.332112 ,
     name:"Crowne Plaza Hotel",
     address: "1113 6th Ave",
