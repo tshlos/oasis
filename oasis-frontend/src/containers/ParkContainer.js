@@ -8,13 +8,15 @@ const parksURL = 'http://localhost:3000/api/v1/rooftop_parks';
 class ParkContainer extends Component {
 
     state = {
+        allParks: [],
         parks: [],
     }
 
+ 
     componentDidMount() {
         fetch(parksURL)
             .then(resp => resp.json())
-            .then(parks => this.setState({ parks: parks })
+            .then(parks => this.setState({ parks: parks, allParks: parks })
             );
     }
 
@@ -31,6 +33,14 @@ class ParkContainer extends Component {
     //     console.log('on review click')
     // }
 
+sortCard= (e) => {
+let card = this.state.allParks.filter(park => park.id === e.pin.id)
+console.log(card)
+this.setState({ 
+    parks : card
+})
+
+} 
 
     render() {
         return (
@@ -44,7 +54,7 @@ class ParkContainer extends Component {
                     <StarRating favorite={this.state.favorite}/>
                 </div>
                 <div >
-                    <MapContainer /> 
+                    <MapContainer parks = {this.state.parks} sortCard ={this.sortCard}/> 
                 </div>
             </div>
         );
