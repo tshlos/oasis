@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ParkCollection from './ParkCollection';
 import MapContainer from './MapContainer';
 import StarRating from '../components/StarRating';
+import FavContainer from './FavContainer'
 
 const parksURL = 'http://localhost:3000/api/v1/rooftop_parks';
 
@@ -10,6 +11,7 @@ class ParkContainer extends Component {
     state = {
         allParks: [],
         parks: [],
+        favorites: []
     }
 
  
@@ -56,7 +58,7 @@ this.setState({
                     <MapContainer parks = {this.state.parks} sortCard ={this.sortCard}/> 
                 </div>
                 <div> 
-                    {/* <FavContainer /> */}
+                    <FavContainer parks={this.state.parks} favorites={this.state.favorites}/>
                 </div>
             </div>
         );

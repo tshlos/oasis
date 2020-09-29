@@ -13,6 +13,10 @@ class FrontCard extends Component {
         }));
     }
 
+    addFavorite = () => {
+        
+    }
+
     render() {
         const { name, photo, address, zipcode, city, state } = this.props.park;
         return (
