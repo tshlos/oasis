@@ -1,3 +1,30 @@
+
+/* NAVBAR */
+.navbar {
+  background-color: white;
+  border-bottom: 6px solid #1A0035;
+  margin-bottom: 25px;
+
+}
+
+.navbar a {
+  color:#1A0035;
+  text-decoration: none;
+  font-weight: bold;
+  
+  /* padding-bottom: 25 px; */
+  
+}
+
+.navbar a:hover {
+  color: #FF4A59;
+}
+
+.logo {
+  height: 45px;
+}
+
+/* MAP AND CARDS PAGE */
 input[type="radio"] {
   display: none;
 }
@@ -8,9 +35,36 @@ input[type="radio"] {
 
 .app-grid {
   display: grid; 
-  grid-template-columns: .5fr .5fr;
+  grid-template-columns: .5fr 1fr .5fr;
+  /* background: #1A0035; */
+ 
 }     
 
 #frontCard {
   cursor: pointer
+}
+
+/* HOME PAGE */
+.home {
+  text-align: center;
+}
+
+.home #title {
+  font-weight: bold;
+}
+
+.home #body {
+  font-style: italic;
+}
+ 
+.flippy-cardContainer  :hover {
+  /* padding: 0; */
+  color: #551f8f;
+  /* background-color: grey; */
+  margin-top: 25px;
+}
+
+/* MAP */
+.map {
+  margin-left: 35px;
 }
