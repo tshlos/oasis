@@ -7,8 +7,8 @@ input[type="radio"] {
 }
 
 .app-grid {
-  display: grid;
-  grid-template-columns: .5fr 1fr;
-
+  /* display: grid; */
+  /* grid-template-columns: .5fr .5fr; */
+  display: flex
 }
 
