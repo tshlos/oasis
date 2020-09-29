@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StarRating from './StarRating'
+import StarRating from './StarRating';
 
 class FrontCard extends Component {
 
@@ -10,7 +10,7 @@ class FrontCard extends Component {
     onSelectFavorite = () => {
         this.setState(prevState => ({
             favorite: !prevState.favorite
-        }))
+        }));
     }
 
     render() {
@@ -21,7 +21,7 @@ class FrontCard extends Component {
                     <h5>{name}</h5>
                 </div>
                 <div className="mt-3">
-                    <img alt="rooftop bar" src={photo} style={{ width: '300px', height: '250px' }} />
+                    <img alt="rooftop bar" src={photo} style={{ width: '100%' }} />
                 </div>
                 <div className="mt-3">
                     <StarRating
@@ -32,8 +32,8 @@ class FrontCard extends Component {
                     <div> {city.name}, {state} {zipcode} </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 
-export default FrontCard
+export default FrontCard;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ParkCollection from './ParkCollection';
 import MapContainer from './MapContainer';
-import StarRating from '../components/StarRating'
+import StarRating from '../components/StarRating';
 
 const parksURL = 'http://localhost:3000/api/v1/rooftop_parks';
 
@@ -15,15 +15,15 @@ class ParkContainer extends Component {
         fetch(parksURL)
             .then(resp => resp.json())
             .then(parks => this.setState({ parks: parks })
-            )
+            );
     }
 
-    removeFavorite = (card) => {
+    onRemoveFavorite = (card) => {
         this.setState(prevState => {
             return {
                 favorite: prevState.favorite.filter(i => i !== card)
             }  
-        })
+        });
     }
 
 
@@ -38,17 +38,17 @@ class ParkContainer extends Component {
                 <div>
                     <ParkCollection 
                         parks={this.state.parks} 
-                        removeFavorite={this.removeFavorite}
+                        onRemoveFavorite={this.onRemoveFavorite}
                         // onReviewClick={this.onReviewClick} 
                     /> 
                     <StarRating favorite={this.state.favorite}/>
                 </div>
-                <div > 
+                <div >
                     <MapContainer /> 
                 </div>
             </div>
-        )
+        );
     }
 }
 
-export default ParkContainer
+export default ParkContainer;

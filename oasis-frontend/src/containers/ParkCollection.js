@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import FrontCard from '../components/FrontCard'
-import BackCard from '../components/BackCard'
+import FrontCard from '../components/FrontCard';
+import BackCard from '../components/BackCard';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
 
@@ -12,20 +12,17 @@ class ParkCollection extends Component {
                 <div>
                     {this.props.parks.map(park => {
                         return (
-                            <div className="ml-3" key={park.id}>
+                            <div className="ml-5 mb-3" key={park.id}>
                                 <Flippy 
-                                    flipOnHover={false} 
                                     flipOnClick={true}
-                                    flipDirection="horizontal" 
-                                    ref={(r) => this.flippy = r}
-                                    style={{ width: '400px', height: '450px' }}
+                                    style={{ width: '300px' }}
                                 >
                                 <FrontSide
                                     style={{ backgroundColor: '#ffffff' }}>
                                     <FrontCard 
                                         park={park} 
                                         onSelectFavorite={this.props.onSelectFavorite}
-                                        removeFavorite={this.props.removeFavorite}
+                                        onRemoveFavorite={this.props.onRemoveFavorite}
                                     />
                                 </FrontSide>
                                 <BackSide
@@ -37,12 +34,12 @@ class ParkCollection extends Component {
                                 </BackSide>
                                 </Flippy>
                             </div>
-                        )
+                        );
                     })}
                 </div>
             </div>
-        )
+        );
     }
 }
 
-export default ParkCollection
+export default ParkCollection;

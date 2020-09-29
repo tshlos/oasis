@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaStar } from 'react-icons/fa';
-import FrontCard from './FrontCard';
 
 
 const StarRating = (props) => {
 
+    const onClick = (e) => {
+        e.stopPropagation();
+        if (props.onSelectFavorite) {
+            props.onSelectFavorite(props.park);
+        } else {
+            props.onRemoveFavorite(props.park);
+        }
+        return false;
+    }
+
     return (
         <div >     
             <FaStar 
-                onClick={() => {props.onSelectFavorite ? props.onSelectFavorite(props.park) : props.removeFavorite(props.park)}}
+                onClick={onClick}
                 className="star" 
                 size={20} 
                 color={props.favorite ? "#ffc107" : "#e4e5e9"}
             />
         </div>
-    )
+    );
 }
 
 export default StarRating
