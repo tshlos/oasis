@@ -5,6 +5,8 @@ Rails.application.routes.draw do
         resources :users
         resources :rooftop_parks
         resources :favorites
+
+        post '/login', to: 'users#login'        
       end
     end
 end
