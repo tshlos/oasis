@@ -5,10 +5,24 @@ class Api::V1::UsersController < ApplicationController
         render json: users
     end
 
-    def create 
+    def create
         user = User.new(user_params)
+        user.save!
         render json: user
     end
+
+    def login
+        user = User.find_by(username:params[:username])
+        user.password = 'password'
+        user.password_confirmation = 'password'
+        user.save
+        if user && user.authenticate('password')
+            render json: { id: user.id, username: user.username } 
+        else
+            render json: { error: 'Boo' }
+        end
+    end
+
 
     def show 
         user = User.find(params[:id])
@@ -26,9 +40,9 @@ class Api::V1::UsersController < ApplicationController
         user.destroy
         render json:{message: "User has been deleted"}
     end
-    private 
 
+    private 
     def user_params 
-        params.require(:user).permit(:name, :city_id)
+        params.require(:user).permit(:id, :username, :password_digest, :city_id)
     end
 end

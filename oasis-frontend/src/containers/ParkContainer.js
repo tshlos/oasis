@@ -14,7 +14,7 @@ class ParkContainer extends Component {
         favorites: []
     }
 
- 
+
     componentDidMount() {
         fetch(parksURL)
             .then(resp => resp.json())
@@ -26,45 +26,39 @@ class ParkContainer extends Component {
         this.setState(prevState => {
             return {
                 favorite: prevState.favorite.filter(i => i !== card)
-            }  
+            }
         });
     }
 
+    sortCard = (e) => {
+        let card = this.state.allParks.filter(park => park.id === e.pin.id)
+        console.log(card)
+        this.setState({
+            parks: card
+        })
+    }
 
-    // onReviewClick = () => {
-    //     console.log('on review click')
-    // }
-
-sortCard= (e) => {
-let card = this.state.allParks.filter(park => park.id === e.pin.id)
-console.log(card)
-this.setState({ 
-    parks : card
-})
-} 
-
-addFavorite= (fav) => {
-if(!this.state.favorites.includes(fav))
-this.setState({
-    favorites: [...this.state.favorites, fav]
-})
-}
+    addFavorite = (fav) => {
+        if (!this.state.favorites.includes(fav))
+            this.setState({
+                favorites: [...this.state.favorites, fav]
+            })
+    }
     render() {
         return (
             <div className="app-grid">
                 <div>
-                    <ParkCollection 
-                        parks={this.state.parks} 
-                        // onRemoveFavorite={this.onRemoveFavorite} 
+                    <ParkCollection
+                        parks={this.state.parks}
                         addFavorite={this.addFavorite}
-                        // onReviewClick={this.onReviewClick} 
-                    /> 
+                        // onReviewClick={this.onReviewClick}
+                    />
                 </div>
                 <div className="map">
-                    <MapContainer parks = {this.state.parks} sortCard ={this.sortCard}/> 
+                    <MapContainer parks={this.state.parks} sortCard={this.sortCard} />
                 </div>
-                <div> 
-                    <FavContainer parks={this.state.parks} favorites={this.state.favorites} addFavorite={this.addFavorite}/>
+                <div>
+                    <FavContainer parks={this.state.parks} favorites={this.state.favorites} addFavorite={this.addFavorite} />
                 </div>
             </div>
         );
