@@ -7,6 +7,7 @@ import Home from './containers/Home'
 import ParkContainer from './containers/ParkContainer'
 import Login from './containers/Login'
 import SignUp from './containers/SignUp';
+import Profile from './containers/Profile';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/rooftop_parks" component={ParkContainer}/>
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/profile" component={Profile} /> 
         </div>
       </Router>
     );

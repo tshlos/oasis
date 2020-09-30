@@ -13,14 +13,15 @@ code {
     monospace;
 }
 
-.Login {
+.Login, .Signup {
   padding: 60px 0;
 }
 
-.Login form {
+.Login, .Signup form {
   margin: 0 auto;
   max-width: 320px;
 }
+
 /* #frontCard:hover{
   background: grey
 } */

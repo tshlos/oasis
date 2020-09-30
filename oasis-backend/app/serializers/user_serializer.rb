@@ -1,4 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :id, :username, :city
-  # has_many :favorites
+  # validates :username, uniqueness: true
 end
