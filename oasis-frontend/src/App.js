@@ -5,7 +5,8 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Home from './containers/Home'
 import ParkContainer from './containers/ParkContainer'
-
+import Login from './containers/Login'
+import SignUp from './containers/SignUp';
 
 class App extends Component {
   render() {
@@ -15,6 +16,8 @@ class App extends Component {
           <NavBar />
           <Route exact path="/" component={Home} />
           <Route path="/rooftop_parks" component={ParkContainer}/>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
         </div>
       </Router>
     );

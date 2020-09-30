@@ -27,11 +27,6 @@ class ParkContainer extends Component {
     }
 
 
-    // onReviewClick = () => {
-    //     console.log('on review click')
-    // }
-
-
     render() {
         return (
             <div className="app-grid">
@@ -39,7 +34,6 @@ class ParkContainer extends Component {
                     <ParkCollection 
                         parks={this.state.parks} 
                         onRemoveFavorite={this.onRemoveFavorite}
-                        // onReviewClick={this.onReviewClick} 
                     /> 
                     <StarRating favorite={this.state.favorite}/>
                 </div>

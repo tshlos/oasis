@@ -42,7 +42,7 @@ export class MapContainer extends Component {
 // }
 
   makePins = () => {
-    return this.state.pins.map(pin => {
+    this.state.pins.map(pin => {
       return <Marker onClick= {this.onMarkerClick}
       name ={pin.name}  
       key={pin.id} pin={pin}
@@ -61,7 +61,6 @@ export class MapContainer extends Component {
   };
 
   render() {
-    console.log(this.state.selectedPlace)
     return (
       <Map
         google={this.props.google}
