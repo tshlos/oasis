@@ -37,6 +37,7 @@ class FavContainer extends Component{
                                         park={favorite} key={favorite.id} 
                                         addFavorite={this.props.addFavorite}
                                         onSelectFavorite={this.props.onSelectFavorite}
+                                        removeFavorite={this.props.removeFavorite}
                                         
                                     />
                                 </FrontSide>
