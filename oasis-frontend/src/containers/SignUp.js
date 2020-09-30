@@ -26,18 +26,20 @@ class SignUp extends Component {
     // }
 
     handleSignUp = async (e, userInfo) => {
-        console.log(userInfo)
+        console.log('user info', userInfo)
         e.preventDefault()
         const user = {
             username: userInfo.username,
             password: userInfo.password,
+            city_id: userInfo.city_id,
         };
+        console.log('user', user)
         const resp = await fetch('http://localhost:3000/api/v1/users', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify({user})
         })
         const json = await resp.json()
         if (!json.error) {
@@ -67,7 +69,7 @@ class SignUp extends Component {
                     <br />
                     <input 
                         type="password" 
-                        name="password_digest" 
+                        name="password" 
                         placeholder="Password" 
                         value={this.state.password} 
                         onChange={this.handleChange} 
@@ -75,8 +77,8 @@ class SignUp extends Component {
                     <br />
                     <select onChange={this.handleChange} name="city_id" id="city"> 
                         <option value="choose a city"> Choose a City </option>
-                        <option value="3"> San Francisco </option>
-                        <option value="4"> Seattle </option>  
+                        <option value="9"> San Francisco </option>
+                        <option value="10"> Seattle </option>  
                     </select>
                     <br />
                     <input type="submit" value="Submit" />
