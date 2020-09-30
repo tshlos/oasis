@@ -11,7 +11,7 @@ class ParkCollection extends Component {
                 <div>
                     {this.props.parks.map(park => {
                         return (
-                            <div className="ml-5 mb-3" key={park.id} id ={park.id}>
+                            <div className="ml-5 mb-3" park={park} key={park.id} >
                                 <Flippy 
                                     flipOnClick={true}
                                     style={{ width: '300px' }}
@@ -19,7 +19,8 @@ class ParkCollection extends Component {
                                 <FrontSide
                                     style={{ backgroundColor: '#ffffff' }}>
                                     <FrontCard 
-                                        park={park} 
+                                        park={park} key={park.id} 
+                                        addFavorite={this.props.addFavorite}
                                         onSelectFavorite={this.props.onSelectFavorite}
                                         onRemoveFavorite={this.props.onRemoveFavorite}
                                     />

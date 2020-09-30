@@ -6,7 +6,7 @@ import FrontCard from '../components/FrontCard'
 export default class FavContainer extends Component{
     renderFavorites = () => {
         return this.props.favorites.map(favorite => {
-           return <FrontCard favorite={favorite} key={favorite.id} addFavorite={this.props.addFavorite}  />
+           return <FrontCard park={favorite} key={favorite.id} addFavorite={this.props.addFavorite}  />
        })
        }
 

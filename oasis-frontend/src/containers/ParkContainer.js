@@ -44,7 +44,10 @@ this.setState({
 } 
 
 addFavorite= (fav) => {
-console.log(fav)
+if(!this.state.favorites.includes(fav))
+this.setState({
+    favorites: [...this.state.favorites, fav]
+})
 }
     render() {
         return (
@@ -52,7 +55,7 @@ console.log(fav)
                 <div>
                     <ParkCollection 
                         parks={this.state.parks} 
-                        onRemoveFavorite={this.onRemoveFavorite}
+                        onRemoveFavorite={this.onRemoveFavorite} addFavorite={this.addFavorite}
                         // onReviewClick={this.onReviewClick} 
                     /> 
                 </div>
