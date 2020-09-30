@@ -55,7 +55,8 @@ this.setState({
                 <div>
                     <ParkCollection 
                         parks={this.state.parks} 
-                        onRemoveFavorite={this.onRemoveFavorite} addFavorite={this.addFavorite}
+                        // onRemoveFavorite={this.onRemoveFavorite} 
+                        addFavorite={this.addFavorite}
                         // onReviewClick={this.onReviewClick} 
                     /> 
                 </div>
