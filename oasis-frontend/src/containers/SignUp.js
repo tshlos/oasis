@@ -11,23 +11,51 @@ class SignUp extends Component {
         });
     }
 
+    // handleSignUp = async (e, userInfo) => {
+    //     console.log('userInfo', userInfo)
+    //     e.preventDefault()
+    //     const resp = await fetch('http://localhost:3000/api/v1/users', {
+    //         method: 'POST', 
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(userInfo)
+    //     })
+    //     const user = resp.json();
+    //     this.props.history.push('/rooftop_parks')
+    // }
+
     handleSignUp = async (e, userInfo) => {
-        console.log('userInfo', userInfo)
+        console.log(userInfo)
         e.preventDefault()
+        const user = {
+            username: userInfo.username,
+            password: userInfo.password,
+        };
         const resp = await fetch('http://localhost:3000/api/v1/users', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(userInfo)
+            body: JSON.stringify(user)
         })
-        const user = resp.json();
-        this.props.history.push('/rooftop_parks')
+        const json = await resp.json()
+        if (!json.error) {
+            this.setState({user: {id: json.id, username: json.username}, allFavorites: json.favorites}, () => {
+                // sessionStorage.setItem('Sign Up', json.username)
+                
+                // window.location.href = '/rooftop_parks';
+            });
+        } else {
+            this.setState({
+                isInvalid: true
+            });
+        }
     }
 
     render() {
         return (
-            <div className="Login">
+            <div className="Signup">
                 <form onSubmit={(e) => this.handleSignUp(e, this.state)}>
                     <input 
                         type="text" 

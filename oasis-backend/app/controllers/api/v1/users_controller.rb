@@ -17,12 +17,12 @@ class Api::V1::UsersController < ApplicationController
         user.password_confirmation = 'password'
         user.save
         if user && user.authenticate('password')
+        # if user && user.authenticate(password:params[:password])
             render json: { id: user.id, username: user.username } 
         else
             render json: { error: 'Boo' }
         end
     end
-
 
     def show 
         user = User.find(params[:id])

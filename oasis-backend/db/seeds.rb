@@ -22,22 +22,22 @@ seattle = City.create({
 })
 
 ######USER######
-# user1 = User.create({
-#     name: 'Daniel',
-#     city: seattle
-# })
-# user2 = User.create({
-#     name: 'Lucas',
-#     city: seattle
-# })
-# user3 = User.create({
-#     name: 'Tisdale',
-#     city: san_francisco
-# })
-# user4 = User.create({
-#     name: 'Taci',
-#     city: san_francisco
-# })
+user1 = User.create({
+    username: 'Daniel',
+    city: seattle
+})
+user2 = User.create({
+    username: 'Lucas',
+    city: seattle
+})
+user3 = User.create({
+    username: 'Tisdale',
+    city: san_francisco
+})
+user4 = User.create({
+    username: 'Taci',
+    city: san_francisco
+})
 
 
 ###ROOF TOP PARKS####

@@ -19,23 +19,19 @@ class Login extends Component {
     }
 
     handleLogin = async (e, userInfo) => {
+        console.log('userInfo', userInfo)
         e.preventDefault()
-        const user = {
-            username: userInfo.username,
-            password: userInfo.password,
-        };
         const resp = await fetch('http://localhost:3000/api/v1/login', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(userInfo)
         })
-        const json = await resp.json()
-        if (!json.error) {
-            this.setState({user: {id: json.id, username: json.username}, allFavorites: json.favorites}, () => {
-                sessionStorage.setItem('Login', json.username)
-                
+        const user = resp.json();
+        if (!user.error) {
+            this.setState({user: {id: user.id, username: user.username}, allFavorites: user.favorites}, () => {
+                sessionStorage.setItem('Login', user.username);
                 window.location.href = '/rooftop_parks';
             });
         } else {
@@ -43,7 +39,36 @@ class Login extends Component {
                 isInvalid: true
             });
         }
+     
+        // this.props.history.push('/rooftop_parks')
     }
+
+    // handleLogin = async (e, userInfo) => {
+    //     e.preventDefault()
+    //     const user = {
+    //         username: userInfo.username,
+    //         password: userInfo.password,
+    //     };
+    //     const resp = await fetch('http://localhost:3000/api/v1/login', {
+    //         method: 'POST', 
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(user)
+    //     })
+    //     const json = await resp.json()
+    //     if (!json.error) {
+    //         this.setState({user: {id: json.id, username: json.username}, allFavorites: json.favorites}, () => {
+    //             sessionStorage.setItem('Login', json.username)
+                
+    //             window.location.href = '/rooftop_parks';
+    //         });
+    //     } else {
+    //         this.setState({
+    //             isInvalid: true
+    //         });
+    //     }
+    // }
 
     render() {
         return (
