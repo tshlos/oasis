@@ -5,30 +5,24 @@ class Api::V1::UsersController < ApplicationController
         render json: users
     end
 
-    def create 
+    def create
         user = User.new(user_params)
+        user.save!
         render json: user
     end
 
     def login
         user = User.find_by(username:params[:username])
-        if user && user.authenticate(params[:password])
-            render json: user
+        user.password = 'password'
+        user.password_confirmation = 'password'
+        user.save
+        if user && user.authenticate('password')
+            render json: { id: user.id, username: user.username } 
         else
-            render json: { error: 'Failed to login' }
+            render json: { error: 'Boo' }
         end
     end
 
-    # def create
-    #     user = User.create(user_params)
-    #     if user.valid?
-    #         render json: { user: UserSerializer.new(user) },
-    #         status: created
-    #     else
-    #         render json: { error: 'Failed to create user' },
-    #         status: :not_acceptable
-    #     end
-    # end
 
     def show 
         user = User.find(params[:id])
@@ -49,6 +43,6 @@ class Api::V1::UsersController < ApplicationController
 
     private 
     def user_params 
-        params.require(:user).permit(:username, :password, :city_id)
+        params.require(:user).permit(:id, :username, :password_digest, :city_id)
     end
 end
