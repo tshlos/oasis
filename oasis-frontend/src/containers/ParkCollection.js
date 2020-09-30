@@ -29,7 +29,6 @@ class ParkCollection extends Component {
                                     style={{ backgroundColor: '#ffffff' }}>
                                     <BackCard 
                                         park={park} 
-                                        // onReviewClick={this.props.onReviewClick}
                                     />
                                 </BackSide>
                                 </Flippy>
