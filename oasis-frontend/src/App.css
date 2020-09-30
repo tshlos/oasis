@@ -47,14 +47,23 @@ input[type="radio"] {
 /* HOME PAGE */
 .home {
   text-align: center;
+  height:100%
 }
 
 .home #title {
-  font-weight: bold;
+  height: 250px;
 }
 
 .home #body {
   font-style: italic;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.home #home-page-logo {
+  height: 300px;
 }
  
 .flippy-cardContainer  :hover {
