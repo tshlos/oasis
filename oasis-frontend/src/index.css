@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1A0035;
 }
 
 code {
@@ -20,3 +21,9 @@ code {
   margin: 0 auto;
   max-width: 320px;
 }
+/* #frontCard:hover{
+  background: grey
+} */
+
+
+

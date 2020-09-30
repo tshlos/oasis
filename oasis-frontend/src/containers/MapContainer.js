@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker} from 'google-maps-react';
 
+// let iconMarker = 
 const mapStyles = {
   width: '600px',
   height: '800px'
@@ -42,10 +43,8 @@ export class MapContainer extends Component {
 // }
 
   makePins = () => {
-    this.state.pins.map(pin => {
-      return <Marker onClick= {this.onMarkerClick}
-      name ={pin.name}  
-      key={pin.id} pin={pin}
+    return this.state.pins.map(pin => {
+      return <Marker onClick={this.props.sortCard} onMouseOver={console.log("hi")}  name = {pin.name} key={pin.id} pin={pin}
       position={{ lat: pin.lat, lng: pin.lng }}
       />
     })
@@ -61,6 +60,7 @@ export class MapContainer extends Component {
   };
 
   render() {
+  
     return (
       <Map
         google={this.props.google}
@@ -80,7 +80,7 @@ export class MapContainer extends Component {
  
         
         <InfoWindow
-      
+         
           selectedPlace={this.state.selectedPlace}
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}

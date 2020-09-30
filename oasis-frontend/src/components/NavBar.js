@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from './oasis.logo.png';
 
 
 class NavBar extends Component {
@@ -12,6 +13,7 @@ class NavBar extends Component {
     render() {
         return (
             <div className="navbar">
+                <NavLink to="/"> <img src= {logo} alt= 'oasis logo' className='logo'></img> </NavLink>
                 <NavLink to="/"> Home </NavLink>
                 <NavLink to="/rooftop_parks"> Rooftop Parks </NavLink>
                 {sessionStorage.getItem("Login") ? <a href="#" onClick={this.logout} > Logout </a> : <NavLink to="/login"> Login </NavLink> }
@@ -20,7 +22,5 @@ class NavBar extends Component {
         )
     }
 }
-
-
 
 export default NavBar
