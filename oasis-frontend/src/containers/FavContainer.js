@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-import FrontCard from './FrontCard'
+import FrontCard from '../components/FrontCard'
 
 
 
 export default class FavContainer extends Component{
+    renderFavorites = () => {
+        return this.props.favorites.map(favorite => {
+           return <FrontCard favorite={favorite} key={favorite.id} addFavorite={this.props.addFavorite}  />
+       })
+       }
 
     
 
     render(){
-        return 'hi'
+        return (
+         <div>
+            {this.renderFavorites()}
+        </div>
+        )
     }
 }

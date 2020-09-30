@@ -41,9 +41,11 @@ console.log(card)
 this.setState({ 
     parks : card
 })
-
 } 
 
+addFavorite= (fav) => {
+console.log(fav)
+}
     render() {
         return (
             <div className="app-grid">
@@ -58,7 +60,7 @@ this.setState({
                     <MapContainer parks = {this.state.parks} sortCard ={this.sortCard}/> 
                 </div>
                 <div> 
-                    <FavContainer parks={this.state.parks} favorites={this.state.favorites}/>
+                    <FavContainer parks={this.state.parks} favorites={this.state.favorites} addFavorite={this.addFavorite}/>
                 </div>
             </div>
         );
