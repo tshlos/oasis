@@ -66,9 +66,12 @@ input[type="radio"] {
   height: 300px;
 }
  
+.flippy-cardContainer {
+  color: #1A0035;
+}
 .flippy-cardContainer  :hover {
   /* padding: 0; */
-  color: #551f8f;
+  color: #FF4A59;
   /* background-color: grey; */
   /* margin-top: 25px; */
 }
