@@ -22,7 +22,7 @@ class ParkCollection extends Component {
                                         park={park} key={park.id} 
                                         addFavorite={this.props.addFavorite}
                                         onSelectFavorite={this.props.onSelectFavorite}
-                                        onRemoveFavorite={this.props.onRemoveFavorite}
+                                        
                                     />
                                 </FrontSide>
                                 <BackSide
