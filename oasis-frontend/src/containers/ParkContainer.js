@@ -22,13 +22,13 @@ class ParkContainer extends Component {
             );
     }
 
-    onRemoveFavorite = (card) => {
-        this.setState(prevState => {
-            return {
-                favorite: prevState.favorite.filter(i => i !== card)
-            }
-        });
-    }
+    // onRemoveFavorite = (card) => {
+    //     this.setState(prevState => {
+    //         return {
+    //             favorite: prevState.favorite.filter(i => i !== card)
+    //         }
+    //     });
+    // }
 
     sortCard = (e) => {
         let card = this.state.allParks.filter(park => park.id === e.pin.id)
@@ -44,6 +44,11 @@ class ParkContainer extends Component {
                 favorites: [...this.state.favorites, fav]
             })
     }
+
+    removeFavorite = (favToBeRemoved) => {
+        let newFavorites = this.state.favorites.filter(favItem => favItem !== favToBeRemoved)
+        this.setState({favorites: newFavorites})
+    }
     render() {
         return (
             <div className="app-grid">
@@ -58,7 +63,11 @@ class ParkContainer extends Component {
                     <MapContainer parks={this.state.parks} sortCard={this.sortCard} />
                 </div>
                 <div>
-                    <FavContainer parks={this.state.parks} favorites={this.state.favorites} addFavorite={this.addFavorite} />
+                    <FavContainer parks={this.state.parks} 
+                    favorites={this.state.favorites} 
+                    addFavorite={this.addFavorite} 
+                    removeFavorite={this.removeFavorite}
+                    />
                 </div>
             </div>
         );

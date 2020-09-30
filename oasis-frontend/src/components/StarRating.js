@@ -20,6 +20,7 @@ const StarRating = (props) => {
             <FaStar 
                
                 onClick={() => props.addFavorite(props.park)}
+                // onClick={() => props.removeFavorite(props.park)}
                 className="star" 
                 size={20} 
                 color={props.favorite ? "#ffc107" : "#e4e5e9"}
