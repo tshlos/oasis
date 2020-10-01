@@ -45,44 +45,6 @@ class Profile extends Component {
         fetch(`${usersURL}/${id}`, {method: 'DELETE'})
     }
 
-  
- 
-
-    // deleteUser = (user) => {
-    //     const id = user.id
-    //     this.setState((prevState) => ({
-    //         users: prevState.users.filter((user) => user.id !== id),
-    //     }));
-    //     fetch(`${usersURL}/${id}`, {method: 'DELETE'})
-    // }
-
-    
-    // deleteProfile = () =>{
-    //     let user  = this.state.users.filter(user => user.username === sessionStorage.Login)
-    //     console.log(user[0].id)
-
-    //     fetch(`http://localhost:3000/api/v1/users/${user[0].id}`, {
-    //         method: "DELETE",
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
-    // }
-//     deleteProfile = () =>{
-//         let user  = this.state.users.filter(user => user.username === sessionStorage.Login)
-//         console.log(user[0].id)
-
-//         fetch(`http://localhost:3000/api/v1/users/${user[0].id}`, {
-//             method: "DELETE",
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             }
-//         })
-//     }
-
-
-
-
     render() {
         
         return (
@@ -113,9 +75,6 @@ class Profile extends Component {
                     type="submit" 
                     value="Delete Profile" />
                 </form>
-                <h7>
-                    <button onClick={this.deleteProfile}> Delete Profile</button>
-                </h7>
             </div>
         )
     }
