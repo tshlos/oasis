@@ -22,6 +22,7 @@ class Profile extends Component {
         // this.editUser(users)
     }
 
+    
 
     // handleSubmit = async (e) => {
     //     e.preventDefault();
@@ -87,6 +88,30 @@ class Profile extends Component {
         }
     
   
+ 
+
+    // deleteUser = (user) => {
+    //     const id = user.id
+    //     this.setState((prevState) => ({
+    //         users: prevState.users.filter((user) => user.id !== id),
+    //     }));
+    //     fetch(`${usersURL}/${id}`, {method: 'DELETE'})
+    // }
+
+    
+//     deleteProfile = () =>{
+//         let user  = this.state.users.filter(user => user.username === sessionStorage.Login)
+//         console.log(user[0].id)
+
+//         fetch(`http://localhost:3000/api/v1/users/${user[0].id}`, {
+//             method: "DELETE",
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             }
+//         })
+//     }
+
+
 
 
     render() {
@@ -120,6 +145,9 @@ class Profile extends Component {
                     type="submit" 
                     value="Delete Profile" />
                 </form>
+                <h7>
+                    <button onClick={this.deleteProfile}> Delete Profile</button>
+                </h7>
             </div>
         )
     }
