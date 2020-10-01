@@ -10,7 +10,6 @@ import SignUp from './containers/SignUp';
 import Profile from './containers/Profile';
 
 class App extends Component {
-
   
   render() {
     return (

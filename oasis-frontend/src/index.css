@@ -13,11 +13,11 @@ code {
     monospace;
 }
 
-.Login, .Signup {
+.Login, .Signup, .ui-form {
   padding: 60px 0;
 }
 
-.Login, .Signup form {
+.Login, .Signup, .ui-form {
   margin: 0 auto;
   max-width: 320px;
 }

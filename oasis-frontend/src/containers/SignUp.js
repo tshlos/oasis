@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CityChooser from '../components/CityChooser';
 
 class SignUp extends Component {
 
@@ -11,29 +12,24 @@ class SignUp extends Component {
         });
     }
 
-    // handleSignUp = async (e, userInfo) => {
-    //     console.log('userInfo', userInfo)
-    //     e.preventDefault()
-    //     const resp = await fetch('http://localhost:3000/api/v1/users', {
-    //         method: 'POST', 
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(userInfo)
-    //     })
-    //     const user = resp.json();
-    //     this.props.history.push('/rooftop_parks')
-    // }
+    async componentDidMount() {
+        const resp = await fetch('http://localhost:3000/api/v1/cities');
+        const cities = await resp.json();
+        this.setState({
+            cities
+        })   
+        console.log(cities[0].id)
+        console.log(cities[1].id)
+    }
+
 
     handleSignUp = async (e, userInfo) => {
-        console.log('user info', userInfo)
         e.preventDefault()
         const user = {
             username: userInfo.username,
             password: userInfo.password,
             city_id: userInfo.city_id,
         };
-        console.log('user', user)
         const resp = await fetch('http://localhost:3000/api/v1/users', {
             method: 'POST', 
             headers: {
@@ -44,15 +40,16 @@ class SignUp extends Component {
         const json = await resp.json()
         if (!json.error) {
             this.setState({user: {id: json.id, username: json.username}, allFavorites: json.favorites}, () => {
-                // sessionStorage.setItem('Sign Up', json.username)
+                sessionStorage.setItem('Login', json.username)
                 
-                // window.location.href = '/rooftop_parks';
+                window.location.href = '/rooftop_parks';
             });
         } else {
             this.setState({
                 isInvalid: true
-            });
+            })
         }
+        // .catch(err => console.log(err))
     }
 
     render() {
@@ -75,11 +72,7 @@ class SignUp extends Component {
                         onChange={this.handleChange} 
                     />
                     <br />
-                    <select onChange={this.handleChange} name="city_id" id="city"> 
-                        <option value="choose a city"> Choose a City </option>
-                        <option value="9"> San Francisco </option>
-                        <option value="10"> Seattle </option>  
-                    </select>
+                    <CityChooser onChange={this.handleChange} />
                     <br />
                     <input type="submit" value="Submit" />
                 </form>
