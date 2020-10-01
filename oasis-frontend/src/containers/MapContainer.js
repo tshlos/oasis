@@ -44,7 +44,7 @@ export class MapContainer extends Component {
 
   makePins = () => {
     return this.state.pins.map(pin => {
-      return <Marker onClick={this.props.sortCard} onMouseOver={console.log("hi")}  name = {pin.name} key={pin.id} pin={pin}
+      return <Marker onClick={this.props.sortCard} name={pin.name} key={pin.id} pin={pin}
       position={{ lat: pin.lat, lng: pin.lng }}
       />
     })
@@ -60,7 +60,6 @@ export class MapContainer extends Component {
   };
 
   render() {
-  
     return (
       <Map
         google={this.props.google}
