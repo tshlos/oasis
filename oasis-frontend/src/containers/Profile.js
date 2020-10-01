@@ -6,29 +6,60 @@ const usersURL = 'http://localhost:3000/api/v1/users';
 class Profile extends Component {
 
     state = {
-        users: []
+        users: [],
+        user: {
+            username: "",
+            city_id: null
+        }
     }
 
     async componentDidMount() {
         const resp = await fetch(usersURL);
         const users = await resp.json();
+        this.setState({ users: users });
+        // users.map(user => console.log(user.id))
         // console.log(users);
+        // this.editUser(users)
+
     }
 
 
-    editUser = async (event) => {
-        console.log('event', event)
-        // const resp = await fetch('http://localhost:3000/api/v1/users' + `/${}`, {
+    handleSubmit = async (e) => {
+        e.preventDefault();
+        let body = this.state.user
+        let user  = this.state.users.filter(user => user.username === sessionStorage.Login)
+        console.log(user[0].id)
+            const resp = await fetch('http://localhost:3000/api/v1/users' + `/${user[0].id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+            
+        }) 
+    }
+
+    editUser = async ( event) => {
+       const {name, value} = event.target 
+        // debugger
+    //    console.log(sessionStorage.Login)
+        let body = {}
+        this.setState(prevState =>({user: {...prevState.user, [name]: value}}))
+    //    console.log(sessionStorage.Login) 
+      
+    //    let user_id = user.m
+    //    console.log(user[0].id)
+        // const resp = await fetch('http://localhost:3000/api/v1/users' + `/${user[0].id}`, {
         //     method: 'PATCH',
         //     headers: {
         //         'Content-Type': 'application/json'
         //     },
-        //     body: JSON.stringify(resp)
+        //     body: JSON.stringify({user})
             
         // }) 
-        this.setState({
-        })
-    }
+        // console.log(user)
+        }
+    
   
  
 
@@ -46,22 +77,29 @@ class Profile extends Component {
         return (
             <div className="Profile">
             <h3> Edit Profile </h3>
-                <form class="ui-form">
+                <form class="ui-form" onSubmit = {event =>this.handleSubmit(event)}>
                     <label>Username</label>
                     < br/>
                     <input
                         onChange={event => this.editUser(event)}
-                        value=""
+                        value={this.state.username}
                         type="text"
                         name="username"
-                        v-validate="'required"
+                        v-validate="required"
                     />
                     < br/>
                     <label>City</label>
                     < br/>
-                    <CityChooser />
+                    <CityChooser 
+                    onChange= {this.editUser}
+                    
+                    />
                     <br />
-                    <input type="submit" value="Update Profile" />
+                    <input 
+                    
+
+                    type="submit" 
+                    value="Update Profile" />
                     {/* {this.state.isInvalid && <div className="text-danger mt-2" >Invalid Username and Password</div> } */}
                 </form>
             </div>
