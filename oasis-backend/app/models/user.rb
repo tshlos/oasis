@@ -4,5 +4,7 @@ class User < ApplicationRecord
   has_many :rooftop_parks, through: :favorites
   
   has_secure_password
+  validates :username, uniqueness: true
+
 
 end
