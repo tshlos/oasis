@@ -88,8 +88,10 @@ class Profile extends Component {
         return (
             <div className="Profile">
             <h3> Edit Profile </h3>
+            <div className = "profile-form">
                 <form class="ui-form" onSubmit = {(event) =>this.handleSubmit(event)}>
-                    <label>Username</label>
+                    <div id= "form-content">
+                    <label><b>Edit Username:</b></label>
                     < br/>
                     <input
                         value={this.state.username}
@@ -98,23 +100,25 @@ class Profile extends Component {
                         v-validate="required"
                     />
                     < br/>
-                    <label>City</label>
+                    <label><b>Change location:</b></label>
                     < br/>
                     <CityChooser 
                         onChange={this.editUser}
                     />
-                    <br />
+                    <br /><br/>
                     <input 
                     type="submit" 
                     value="Update Profile" />
-                    <br />
+                    <br /> <br/>
                     <input 
                     onClick = {this.deleteUser}
                     type="submit" 
                     value="Delete Profile" />
+                    </div>
                 </form>
+                </div>
                 <h7>
-                    <button onClick={this.deleteProfile}> Delete Profile</button>
+                    {/* <button onClick={this.deleteProfile}> Delete Profile</button> */}
                 </h7>
             </div>
         )
