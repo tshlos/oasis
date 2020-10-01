@@ -21,7 +21,6 @@ class Api::V1::UsersController < ApplicationController
         user.password_confirmation = 'password'
         user.save
         if user && user.authenticate('password')
-        # if user && user.authenticate(password:params[:password])
             render json: { id: user.id, username: user.username } 
         else
             render json: { error: 'Boo' }
@@ -31,11 +30,6 @@ class Api::V1::UsersController < ApplicationController
     def show 
         user = User.find_by(id: params[:id])
         render json: user
-        # if user 
-        #     render json: user
-        # else 
-        #     render json: {message: 'This user does not exist'}
-        # end
     end
 
     def update 
@@ -51,7 +45,6 @@ class Api::V1::UsersController < ApplicationController
     def destroy 
         user = User.find(params[:id])
         user.destroy
-        render json:{message: "User has been deleted"}
     end
 
     private 
