@@ -35,7 +35,7 @@ input[type="radio"] {
 
 .app-grid {
   display: grid; 
-  grid-template-columns: .5fr 1fr .5fr;
+  grid-template-columns: 1fr 1fr 1fr;
   /* background: #1A0035; */
  
 }     
@@ -68,6 +68,7 @@ input[type="radio"] {
  
 .flippy-cardContainer {
   color: #1A0035;
+  /* margin-right: 400px; */
 }
 .flippy-cardContainer  :hover {
   /* padding: 0; */
@@ -78,5 +79,5 @@ input[type="radio"] {
 
 /* MAP */
 .map {
-  margin-left: 35px;
+  display: inline-block;
 }

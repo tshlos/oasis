@@ -3,8 +3,8 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker} from 'google-maps-react';
 
 // let iconMarker = 
 const mapStyles = {
-  width: '600px',
-  height: '800px'
+  width: '32%',
+  height: '85%'
 };
 
 export class MapContainer extends Component {

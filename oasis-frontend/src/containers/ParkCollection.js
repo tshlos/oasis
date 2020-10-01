@@ -21,6 +21,7 @@ class ParkCollection extends Component {
                                     <FrontCard 
                                         park={park} key={park.id} 
                                         addFavorite={this.props.addFavorite}
+                                        removeFavorite={this.props.removeFavorite}
                                         onSelectFavorite={this.props.onSelectFavorite}
                                         
                                     />
