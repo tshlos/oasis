@@ -49,9 +49,8 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def destroy 
-        user = User.find(id: params[:id])
+        user = User.find(params[:id])
         user.destroy
-        render json:{message: "User has been deleted"}
     end
 
     private 
