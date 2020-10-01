@@ -17,26 +17,8 @@ class Profile extends Component {
         const resp = await fetch(usersURL);
         const users = await resp.json();
         this.setState({ users: users });
-        // users.map(user => console.log(user.id))
-        // console.log(users);
-        // this.editUser(users)
     }
 
-    
-
-    // handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     let body = this.state.user
-    //     let user  = this.state.users.filter(user => user.username === sessionStorage.Login)
-    //     console.log(user[0].id)
-    //         const resp = await fetch('http://localhost:3000/api/v1/users' + `/${user[0].id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(body)
-    //     }) 
-    // }
 
     handleSubmit = async (event) => {
         event.preventDefault();
@@ -57,38 +39,13 @@ class Profile extends Component {
 
     deleteUser = () => {
         const id = sessionStorage.getItem('Login')
-        // debugger
-        // const id = user.id
         this.setState((prevState) => ({
-            users: prevState.users.filter((user) => console.log('user', user)),
+            users: prevState.users.filter((user) => user.id !== id),
         }));
         fetch(`${usersURL}/${id}`, {method: 'DELETE'})
     }
 
-
-    editUser = async ( event) => {
-       const {name, value} = event.target 
-        // debugger
-    //    console.log(sessionStorage.Login)
-        let body = {}
-        this.setState(prevState =>({user: {...prevState.user, [name]: value}}))
-    //    console.log(sessionStorage.Login) 
-      
-    //    let user_id = user.m
-    //    console.log(user[0].id)
-        // const resp = await fetch('http://localhost:3000/api/v1/users' + `/${user[0].id}`, {
-        //     method: 'PATCH',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({user})
-            
-        // }) 
-        // console.log(user)
-        }
-    
   
-<<<<<<< HEAD
  
 
     // deleteUser = (user) => {
@@ -100,20 +57,18 @@ class Profile extends Component {
     // }
 
     
-    deleteProfile = () =>{
-        let user  = this.state.users.filter(user => user.username === sessionStorage.Login)
-        console.log(user[0].id)
+    // deleteProfile = () =>{
+    //     let user  = this.state.users.filter(user => user.username === sessionStorage.Login)
+    //     console.log(user[0].id)
 
-        fetch(`http://localhost:3000/api/v1/users/${user[0].id}`, {
-            method: "DELETE",
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-    }
+    //     fetch(`http://localhost:3000/api/v1/users/${user[0].id}`, {
+    //         method: "DELETE",
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         }
+    //     })
+    // }
 
-=======
->>>>>>> profile
 
 
     render() {
@@ -124,7 +79,6 @@ class Profile extends Component {
                     <label>Username</label>
                     < br/>
                     <input
-                        onChange={event => this.editUser(event)}
                         value={this.state.username}
                         type="text"
                         name="username"
@@ -134,8 +88,7 @@ class Profile extends Component {
                     <label>City</label>
                     < br/>
                     <CityChooser 
-                    onChange= {this.editUser}
-                    
+                        onChange={this.editUser}
                     />
                     <br />
                     <input 
