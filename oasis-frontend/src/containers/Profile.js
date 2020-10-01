@@ -82,12 +82,14 @@ class Profile extends Component {
             headers: {
                 'Content-Type': 'application/json'
             }
+
         })
     }
 
 
 
     render() {
+        
         return (
             <div className="Profile">
             <h3> Edit Profile </h3>
