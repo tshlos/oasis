@@ -112,9 +112,19 @@ class Profile extends Component {
 //     }
 
 
+        fetch(`http://localhost:3000/api/v1/users/${user[0].id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+
+        })
+    }
+
 
 
     render() {
+        
         return (
             <div className="Profile">
             <h3> Edit Profile </h3>
