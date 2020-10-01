@@ -23,6 +23,7 @@ class Profile extends Component {
 
     }
 
+    
 
     handleSubmit = async (e) => {
         e.preventDefault();
@@ -71,6 +72,19 @@ class Profile extends Component {
     //     fetch(`${usersURL}/${id}`, {method: 'DELETE'})
     // }
 
+    
+    deleteProfile = () =>{
+        let user  = this.state.users.filter(user => user.username === sessionStorage.Login)
+        console.log(user[0].id)
+
+        fetch(`http://localhost:3000/api/v1/users/${user[0].id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    }
+
 
 
     render() {
@@ -102,6 +116,9 @@ class Profile extends Component {
                     value="Update Profile" />
                     {/* {this.state.isInvalid && <div className="text-danger mt-2" >Invalid Username and Password</div> } */}
                 </form>
+                <h7>
+                    <button onClick={this.deleteProfile}> Delete Profile</button>
+                </h7>
             </div>
         )
     }
