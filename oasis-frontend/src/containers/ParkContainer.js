@@ -11,15 +11,33 @@ class ParkContainer extends Component {
     state = {
         allParks: [],
         parks: [],
-        favorites: []
+        favorites: [],
+        users : [],
+        center: {
+            lat: 1, 
+            lng: 1
+        }
+          
+
+
     }
 
 
     componentDidMount() {
+        fetch('http://localhost:3000/api/v1/users')
+        .then(resp => resp.json())
+        .then(users => this.setState({users: users, center: this.theCenter(users)}));
+        
+        
         fetch(parksURL)
             .then(resp => resp.json())
             .then(parks => this.setState({ parks: parks, allParks: parks })
             );
+        
+          
+     
+        
+    
     }
 
     // onRemoveFavorite = (card) => {
@@ -32,10 +50,32 @@ class ParkContainer extends Component {
 
     sortCard = (e) => {
         let card = this.state.allParks.filter(park => park.id === e.pin.id)
-        console.log(card)
+        // console.log(card)
         this.setState({
             parks: card
         })
+    }
+
+    theCenter= (users) => {
+        
+        let user = users.filter(user => user.username == sessionStorage.Login)
+        console.log("sup",user)
+        if(user[0].city.id == 2) {
+          this.setState({
+            center : {
+              lat: 40.608013,
+              lng: -122.335167
+            }
+          })
+        } else {
+          this.setState({
+            center : {
+              lat: 37.787682,
+              lng: -122.420778
+            }
+          })
+        } 
+        // console.log(this.state.center)
     }
 
     addFavorite = (fav) => {
@@ -50,6 +90,7 @@ class ParkContainer extends Component {
         this.setState({favorites: newFavorites})
     }
     render() {
+        console.log("render")
         return (
             <div className="app-grid">
                 <div>
@@ -61,7 +102,7 @@ class ParkContainer extends Component {
                     />
                 </div>
                 <div className="map">
-                    <MapContainer parks={this.state.parks} sortCard={this.sortCard} />
+                    <MapContainer  parks={this.state.parks} sortCard={this.sortCard} users ={this.state.users} center = {this.state.center}/>
                 </div>
                 <div>
                     <FavContainer parks={this.state.parks} 

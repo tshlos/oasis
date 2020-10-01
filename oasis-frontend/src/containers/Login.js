@@ -28,7 +28,7 @@ class Login extends Component {
             },
             body: JSON.stringify(userInfo)
         })
-        const user = resp.json();
+        const user =  await resp.json();
         if (!user.error) {
             this.setState({user: {id: user.id, username: user.username}, allFavorites: user.favorites}, () => {
                 sessionStorage.setItem('Login', user);
