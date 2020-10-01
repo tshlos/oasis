@@ -29,18 +29,27 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def show 
-        user = User.find(params[:id])
+        user = User.find_by(id: params[:id])
         render json: user
+        # if user 
+        #     render json: user
+        # else 
+        #     render json: {message: 'This user does not exist'}
+        # end
     end
 
     def update 
-        user = User.find(params[:id])
-        user.update(user_params)
-        render json: user
+        user = User.find_by(id: params[:id])
+
+        if user.update(user_params)
+            render json: user
+        else 
+            render json: {error: 'User could not be updated'}
+        end
     end
 
     def destroy 
-        user = User.find(params[:id])
+        user = User.find(id: params[:id])
         user.destroy
         render json:{message: "User has been deleted"}
     end
