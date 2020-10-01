@@ -18,8 +18,6 @@ class SignUp extends Component {
         this.setState({
             cities
         })   
-        console.log(cities[0].id)
-        console.log(cities[1].id)
     }
 
 

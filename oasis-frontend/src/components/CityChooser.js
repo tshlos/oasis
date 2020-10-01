@@ -12,8 +12,6 @@ class CityChooser extends Component {
         this.setState({
             cities
         })
-        console.log(cities)
-        console.log(cities[1].id)
     }
 
 
