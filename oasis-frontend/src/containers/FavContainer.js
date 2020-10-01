@@ -23,6 +23,7 @@ class FavContainer extends Component{
 
         return (
             <div>
+                <div className="fav-header"><h4>Favorites</h4><p id="remove-fav">(click card to remove favorite)</p></div>
                 <div>
                     {this.props.favorites.map(favorite => {
                         return (

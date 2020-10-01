@@ -4,7 +4,9 @@
   background-color: white;
   border-bottom: 6px solid #1A0035;
   margin-bottom: 25px;
-
+  width: 100%;
+  
+  
 }
 
 .navbar a {
@@ -44,6 +46,15 @@ input[type="radio"] {
   cursor: pointer
 }
 
+.fav-header {
+margin-bottom: 20px;
+margin-left:160px
+}
+
+#remove-fav {
+  margin-left: -50px
+}
+
 /* HOME PAGE */
 .home {
   text-align: center;
@@ -81,3 +92,4 @@ input[type="radio"] {
 .map {
   display: inline-block;
 }
+

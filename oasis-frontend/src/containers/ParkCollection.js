@@ -8,6 +8,7 @@ class ParkCollection extends Component {
     render() {
         return (
             <div>
+                <div className="fav-header"><h4>Parks</h4></div>
                 <div>
                     {this.props.parks.map(park => {
                         return (

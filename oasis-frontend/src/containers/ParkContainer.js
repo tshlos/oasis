@@ -64,7 +64,6 @@ class ParkContainer extends Component {
                     <MapContainer parks={this.state.parks} sortCard={this.sortCard} />
                 </div>
                 <div>
-                    <h4> Click image to remove park from favorites list</h4>
                     <FavContainer parks={this.state.parks} 
                     favorites={this.state.favorites} 
                     addFavorite={this.addFavorite} 
