@@ -19,7 +19,6 @@ class Login extends Component {
     }
 
     handleLogin = async (e, userInfo) => {
-        console.log('userInfo', userInfo)
         e.preventDefault()
         const resp = await fetch('http://localhost:3000/api/v1/login', {
             method: 'POST', 
@@ -28,10 +27,10 @@ class Login extends Component {
             },
             body: JSON.stringify(userInfo)
         })
-        const user = resp.json();
+        const user = await resp.json();
         if (!user.error) {
             this.setState({user: {id: user.id, username: user.username}, allFavorites: user.favorites}, () => {
-                sessionStorage.setItem('Login', user);
+                sessionStorage.setItem('Login', user.id);
                 window.location.href = '/rooftop_parks';
             });
         } else {
