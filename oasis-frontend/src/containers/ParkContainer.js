@@ -52,14 +52,12 @@ class ParkContainer extends Component {
             <div className="app-grid">
                 <div>
                     {this.state.favorites.length !== 0 && 
-                        <FavContainer parks={this.state.parks} 
+                    <FavContainer parks={this.state.parks} 
                         favorites={this.state.favorites} 
                         addFavorite={this.addFavorite} 
                         removeFavorite={this.removeFavorite}
                         handleRemove={this.handleRemove}
-                        />
-                    } 
-                    
+                    />} 
                     <ParkCollection
                         parks={this.state.parks}
                         addFavorite={this.addFavorite}

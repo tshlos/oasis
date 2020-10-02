@@ -24,7 +24,6 @@ class ParkCollection extends Component {
                                         addFavorite={this.props.addFavorite}
                                         removeFavorite={this.props.removeFavorite}
                                         onSelectFavorite={this.props.onSelectFavorite}
-                                        
                                     />
                                 </FrontSide>
                                 <BackSide

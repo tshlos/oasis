@@ -20,13 +20,12 @@ class Profile extends Component {
     }
 
 
-    handleSubmit = async (event) => {
+    updateUser = async (event) => {
         event.preventDefault();
         const user = {
             username: event.target.username.value,
             city_id: event.target.city.value
         }
-
         let id = sessionStorage.getItem('Login')
         const resp = await fetch(`http://localhost:3000/api/v1/users/${id}`, {
             method: 'PATCH',
@@ -35,22 +34,35 @@ class Profile extends Component {
             },
             body: JSON.stringify({user})
         }) 
+        this.setState({
+            isUpdated: true,
+            username: ''
+        })
+        window.location.href = '/rooftop_parks';
     }
 
-    deleteUser = () => {
+    deleteUser = (event) => {
+        event.preventDefault();
         const id = sessionStorage.getItem('Login')
         this.setState((prevState) => ({
             users: prevState.users.filter((user) => user.id !== id),
         }));
         fetch(`${usersURL}/${id}`, {method: 'DELETE'})
+        this.setState({
+            isDeleted: true,
+            username: ''
+        });
+        window.location.href = '/logout';
+        sessionStorage.clear();
     }
 
-    render() {
-        
-        return (
-            <div className="Profile">
+    render() { 
+        return ( 
+            <div id="profile" className="Profile">
             <h3> Edit Profile </h3>
-                <form class="ui-form" onSubmit = {(event) =>this.handleSubmit(event)}>
+                <form class="ui-form" onSubmit={(event) => this.updateUser(event)}>
+                    {this.state.isUpdated && <div className="text-danger mt-2" >User has been updated</div> }
+                    {this.state.isDeleted && <div className="text-danger mt-2" >User profile has been deleted</div> }
                     <label>Username</label>
                     < br/>
                     <input
@@ -67,13 +79,15 @@ class Profile extends Component {
                     />
                     <br />
                     <input 
-                    type="submit" 
-                    value="Update Profile" />
+                        type="submit" 
+                        value="Update Profile" 
+                    />
                     <br />
                     <input 
-                    onClick = {this.deleteUser}
-                    type="submit" 
-                    value="Delete Profile" />
+                        onClick = {(event) => this.deleteUser(event)}
+                        type="submit" 
+                        value="Delete Profile" 
+                    />
                 </form>
             </div>
         )

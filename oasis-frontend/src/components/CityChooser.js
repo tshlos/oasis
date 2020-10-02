@@ -14,7 +14,6 @@ class CityChooser extends Component {
         })
     }
 
-
     render() {
         return (
             <select onChange={this.props.onChange} name="city_id" id="city"> 

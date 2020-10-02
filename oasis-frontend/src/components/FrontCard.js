@@ -17,7 +17,7 @@ class FrontCard extends Component {
     render() {
         const { name, photo, address, zipcode, city, state } = this.props.park;
         return (
-            <div className="text-center font-weight-light" id='frontCard' >
+            <div className="text-center font-weight-light" id='frontCard'>
                 <div className="mt-3">
                     <h5>{name}</h5>
                 </div>
