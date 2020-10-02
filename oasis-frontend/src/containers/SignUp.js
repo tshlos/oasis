@@ -38,8 +38,7 @@ class SignUp extends Component {
         const json = await resp.json()
         if (!json.error) {
             this.setState({user: {id: json.id, username: json.username}, allFavorites: json.favorites}, () => {
-                sessionStorage.setItem('Login', json.id)
-                
+                sessionStorage.setItem('Login', json.id);
                 window.location.href = '/rooftop_parks';
             });
         } else {
@@ -72,8 +71,7 @@ class SignUp extends Component {
                     <CityChooser onChange={this.handleChange} />
                     <br />
                     <input type="submit" value="Submit" />
-                    {this.state.isInvalid && <div className="text-danger mt-2" >Username has already been taken</div> }
-
+                    {this.state.isInvalid && <div className="text-danger mt-2" >Username has already been taken</div>}
                 </form>
             </div>
         );

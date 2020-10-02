@@ -20,13 +20,12 @@ class Profile extends Component {
     }
 
 
-    handleSubmit = async (event) => {
+    updateUser = async (event) => {
         event.preventDefault();
         const user = {
             username: event.target.username.value,
             city_id: event.target.city.value
         }
-
         let id = sessionStorage.getItem('Login')
         const resp = await fetch(`http://localhost:3000/api/v1/users/${id}`, {
             method: 'PATCH',
@@ -35,94 +34,70 @@ class Profile extends Component {
             },
             body: JSON.stringify({user})
         }) 
+        this.setState({
+            isUpdated: true,
+            username: ''
+        })
+        window.location.href = '/rooftop_parks';
     }
 
-    deleteUser = () => {
+    deleteUser = (event) => {
+        event.preventDefault();
         const id = sessionStorage.getItem('Login')
         this.setState((prevState) => ({
             users: prevState.users.filter((user) => user.id !== id),
         }));
         fetch(`${usersURL}/${id}`, {method: 'DELETE'})
+        this.setState({
+            isDeleted: true,
+            username: ''
+        });
+        window.location.href = '/';
+        sessionStorage.clear();
     }
 
-  
- 
-
-    // deleteUser = (user) => {
-    //     const id = user.id
-    //     this.setState((prevState) => ({
-    //         users: prevState.users.filter((user) => user.id !== id),
-    //     }));
-    //     fetch(`${usersURL}/${id}`, {method: 'DELETE'})
-    // }
-
-    
-    // deleteProfile = () =>{
-    //     let user  = this.state.users.filter(user => user.username === sessionStorage.Login)
-    //     console.log(user[0].id)
-
-    //     fetch(`http://localhost:3000/api/v1/users/${user[0].id}`, {
-    //         method: "DELETE",
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
-    // }
-//     deleteProfile = () =>{
-//         let user  = this.state.users.filter(user => user.username === sessionStorage.Login)
-//         console.log(user[0].id)
-
-//         fetch(`http://localhost:3000/api/v1/users/${user[0].id}`, {
-//             method: "DELETE",
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             }
-//         })
-//     }
-
-
-
-
-    render() {
-        
-        return (
-            <div className="Profile">
-            <h3> Edit Profile </h3>
-            <div className = "profile-form">
-                <form class="ui-form" onSubmit = {(event) =>this.handleSubmit(event)}>
-                    <div id= "form-content">
-                    <label><b>Edit Username:</b></label>
-                    < br/>
-                    <input
-                        value={this.state.username}
-                        type="text"
-                        name="username"
-                        v-validate="required"
-                    />
-                    < br/>
-                    <label><b>Change location:</b></label>
-                    < br/>
-                    <CityChooser 
-                        onChange={this.editUser}
-                    />
-                    <br /><br/>
-                    <input 
-                    type="submit" 
-                    value="Update Profile" />
-                    <br /> <br/>
-                    <input 
-                    onClick = {this.deleteUser}
-                    type="submit" 
-                    value="Delete Profile" />
+    render() { 
+        return ( 
+                <div className="Profile">
+                <h3> Edit Profile </h3>
+                <div className = "profile-form">
+                    <form class="ui-form" onSubmit={(event) => this.updateUser(event)}>
+                        {this.state.isUpdated && <div className="text-danger mt-2" >User has been updated</div> }
+                        {this.state.isDeleted && <div className="text-danger mt-2" >User profile has been deleted</div> }
+                        <label>Username</label>
+                        <div id= "form-content">
+                        <label><b>Edit Username:</b></label>
+                        < br/>
+                        <input
+                            value={this.state.username}
+                            type="text"
+                            name="username"
+                            v-validate="required"
+                        />
+                        < br/>
+                        <label><b>Change location:</b></label>
+                        < br/>
+                        <CityChooser 
+                            onChange={this.editUser}
+                        />
+                        <br /><br/>
+                        <input 
+                        type="submit" 
+                        value="Update Profile" />
+                        <br /> <br/>
+                        <input 
+                        onClick = {this.deleteUser}
+                        type="submit" 
+                        value="Delete Profile" />
+                        </div>
+                    </form>
                     </div>
-                </form>
                 </div>
-                <h7>
-                    {/* <button onClick={this.deleteProfile}> Delete Profile</button> */}
-                </h7>
-            </div>
         )
     }
 }
 
 export default Profile
+
+
+// 

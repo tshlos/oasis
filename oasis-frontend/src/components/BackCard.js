@@ -7,17 +7,14 @@ const BackCard = (props) => {
     return (
         <div > 
             <div className="mt-3"> 
-            <div className="font-weight-light text-center">
-                <div>
-                    <h5>{name}</h5>
+                <div className="font-weight-light text-center">
+                    <div>
+                        <h5>{name}</h5>
+                    </div>
+                    <div className="mt-3">
+                        {description}
+                    </div>
                 </div>
-                <div className="mt-3">
-                    {description}
-                </div>
-                <div> 
-                    {/* <button onClick={props.onReviewClick}>Reviews</button> */}
-                </div>
-            </div>
             </div>
         </div>
     );

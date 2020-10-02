@@ -23,7 +23,7 @@ class Api::V1::UsersController < ApplicationController
         if user && user.authenticate('password')
             render json: { id: user.id, username: user.username } 
         else
-            render json: { error: 'Boo' }
+            render json: { error: 'User could not be logged in' }
         end
     end
 

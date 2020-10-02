@@ -38,7 +38,6 @@ class Login extends Component {
                 isInvalid: true
             });
         }
-        // this.props.history.push('/rooftop_parks')
     }
 
 
