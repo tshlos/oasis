@@ -13,12 +13,8 @@ class NavBar extends Component {
         sessionStorage.clear();
         window.location.href = '/';
     }
-
-    
     
     render() {
-        // console.log(sessionStorage.Username)
-       
         return (
             <div className="navbar">
                 <NavLink to="/"> <img src= {logo} alt= 'oasis logo' className='logo'></img> </NavLink>
