@@ -68,14 +68,14 @@ export class MapContainer extends Component {
     return (
       <Map
         google={this.props.google}
-        zoom={14}
+        zoom={5.5}
         // style={mapStyles}
         initialCenter={
 
           // at some point well need a if else statement to determine if the user is in SF or SEA
           {
-            lat: 47.608013,
-            lng: -122.335167
+            lat: 42.332108,
+            lng: -122.864674
           }
         }
       >
