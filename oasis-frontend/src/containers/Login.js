@@ -31,6 +31,7 @@ class Login extends Component {
         if (!user.error) {
             this.setState({user: {id: user.id, username: user.username}, allFavorites: user.favorites}, () => {
                 sessionStorage.setItem('Login', user.id);
+                sessionStorage.setItem('Username', user.username);
                 window.location.href = '/rooftop_parks';
             });
         } else {

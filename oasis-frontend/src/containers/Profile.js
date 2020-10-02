@@ -60,11 +60,11 @@ class Profile extends Component {
         return ( 
                 <div className="Profile">
                 <h3> Edit Profile </h3>
-                <div className = "profile-form">
+                <div id = "profile-form">
                     <form class="ui-form" onSubmit={(event) => this.updateUser(event)}>
                         {this.state.isUpdated && <div className="text-danger mt-2" >User has been updated</div> }
                         {this.state.isDeleted && <div className="text-danger mt-2" >User profile has been deleted</div> }
-                        <label>Username</label>
+                        {/* <label>Username</label> */}
                         <div id= "form-content">
                         <label><b>Edit Username:</b></label>
                         < br/>

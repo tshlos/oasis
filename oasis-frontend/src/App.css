@@ -5,18 +5,19 @@
   border-bottom: 6px solid #1A0035;
   margin-bottom: 25px;
   width: 100%;
-  
-  
 }
 
 .navbar a {
   color:#1A0035;
   text-decoration: none;
   font-weight: bold;
-  
-  /* padding-bottom: 25 px; */
-  
 }
+
+#dont-click-me{
+  cursor: default;
+  color: #1A0035;
+}
+
 
 .navbar a:hover {
   color: #FF4A59;
@@ -38,8 +39,6 @@ input[type="radio"] {
 .app-grid {
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr;
-  /* background: #1A0035; */
- 
 }     
 
 #frontCard {
@@ -69,8 +68,8 @@ margin-left:160px
   font-style: italic;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 1%;
+  margin-bottom: 3%;
 }
 
 .home #home-page-logo {
@@ -109,19 +108,27 @@ margin-left:160px
   text-align: center;
 }
 
-.profile-form {
+#profile-form {
   margin: 5% 35% 5% 35%;
+
   
-  
+  background-image: url('/oasis.logo.png');
   /* border: 1px solid grey; */
-  opacity: .95;
+  /* opacity: 200%; */
   -webkit-box-shadow: 7px 10px 20px -4px rgba(0,0,0,0.75);
   -moz-box-shadow: 7px 10px 20px -4px rgba(0,0,0,0.75);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
 }
 
+/* .Profile {
+  background-image: url(./containers/oasis.logo.png);
+  background-size: 100%;
+  opacity: 50%;
+  height: 100%
+} */
 .profile-form label {
   color: #1A0035;
+  
 }
 
 .ui-form {

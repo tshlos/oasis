@@ -39,6 +39,7 @@ class SignUp extends Component {
         if (!json.error) {
             this.setState({user: {id: json.id, username: json.username}, allFavorites: json.favorites}, () => {
                 sessionStorage.setItem('Login', json.id);
+                sessionStorage.setItem('Username', json.username);
                 window.location.href = '/rooftop_parks';
             });
         } else {
