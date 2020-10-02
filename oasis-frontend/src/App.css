@@ -82,14 +82,80 @@ margin-left:160px
   /* margin-right: 400px; */
 }
 .flippy-cardContainer  :hover {
-  /* padding: 0; */
   color: #FF4A59;
-  /* background-color: grey; */
-  /* margin-top: 25px; */
 }
 
 /* MAP */
 .map {
-  display: inline-block;
+  overflow:scroll;
+  /* height:100%;
+  width: 100%;
+  margin: 0;
+  padding: 0; */
 }
 
+.map-position {
+ margin-left:-200px;
+ margin-right: 50px;
+  width: 75%;
+  height: 85%;
+  position: fixed;
+  display: block;
+  z-index: 10;
+}
+
+/* Profile */
+.Profile {
+  text-align: center;
+}
+
+.profile-form {
+  margin: 5% 35% 5% 35%;
+  height: 50px;
+  height: 320px;
+  padding: 0px;
+  /* border: 1px solid grey; */
+  opacity: .95;
+  -webkit-box-shadow: 7px 10px 20px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 10px 20px -4px rgba(0,0,0,0.75);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+}
+
+.profile-form label {
+  color: #1A0035;
+}
+/* #profile-content {
+margin-bottom: 500px;
+} */
+
+.Signup{
+  text-align: center;
+  /* margin: 5% 35% 5% 35%; */
+  margin: 0 auto;
+  padding:10px;
+  height: 50px;
+  height: 130px;
+  /* border: 1px solid grey; */
+  opacity: .95;
+  -webkit-box-shadow: 7px 10px 20px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 10px 20px -4px rgba(0,0,0,0.75);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+}
+
+.Login {
+  text-align: center;
+  padding: 10px;
+  /* margin: 5% 39% 60% 35%; */
+  margin: 0 auto;
+  height: 50px;
+  height: 110px;
+  /* border: 1px solid grey; */
+  opacity: .95;
+  -webkit-box-shadow: 7px 10px 20px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 10px 20px -4px rgba(0,0,0,0.75);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+}
+
+h3 {
+  color: #1A0035;
+}

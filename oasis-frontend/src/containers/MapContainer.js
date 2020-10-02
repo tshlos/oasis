@@ -4,10 +4,10 @@ import logo from './oasis.logo1.png'
 
 
 // let iconMarker = 
-const mapStyles = {
-  width: '32%',
-  height: '85%'
-};
+// const mapStyles = {
+//   width: '66%',
+//   height: '85%'
+// };
 
 
 export class MapContainer extends Component {
@@ -69,7 +69,7 @@ export class MapContainer extends Component {
       <Map
         google={this.props.google}
         zoom={14}
-        style={mapStyles}
+        // style={mapStyles}
         initialCenter={
 
           // at some point well need a if else statement to determine if the user is in SF or SEA
