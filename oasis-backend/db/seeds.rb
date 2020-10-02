@@ -132,7 +132,7 @@ rp8 = RooftopPark.create({
     address: "110 Stewart St, Seattle",
     state: "Washington",
     zipcode: 98101,
-    description: "The location in downtown Seattle, close to Pike Place Market, gives you one of the best views in town. Very stylish and trendy in decoration, the beautiful lounge and terrace comes with comfy sofas, fire-pits and quite a lot of greenery. The rooftop bar serves fantastic hand-crafted cocktails, fine wines, beers along with a smaller selection of tasty bar bites.",
+    description: "The location in downtown Seattle, close to Pike Place Market, gives you one of the best views in town. Very trendy in decoration, the beautiful lounge and terrace comes with comfy sofas, fire-pits and quite a lot of greenery. The rooftop bar serves fantastic hand-crafted cocktails, fine wines, beers along with a smaller selection of tasty bar bites.",
     photo: "https://media1.fdncms.com/stranger/imager/u/large/40390198/tsh_eventspace_outdoor_thenest_loungeview_mag.jpg",
     city: seattle
 })
