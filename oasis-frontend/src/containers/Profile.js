@@ -52,46 +52,52 @@ class Profile extends Component {
             isDeleted: true,
             username: ''
         });
-        window.location.href = '/logout';
+        window.location.href = '/';
         sessionStorage.clear();
     }
 
     render() { 
         return ( 
-            <div id="profile" className="Profile">
-            <h3> Edit Profile </h3>
-                <form class="ui-form" onSubmit={(event) => this.updateUser(event)}>
-                    {this.state.isUpdated && <div className="text-danger mt-2" >User has been updated</div> }
-                    {this.state.isDeleted && <div className="text-danger mt-2" >User profile has been deleted</div> }
-                    <label>Username</label>
-                    < br/>
-                    <input
-                        value={this.state.username}
-                        type="text"
-                        name="username"
-                        v-validate="required"
-                    />
-                    < br/>
-                    <label>City</label>
-                    < br/>
-                    <CityChooser 
-                        onChange={this.editUser}
-                    />
-                    <br />
-                    <input 
+                <div className="Profile">
+                <h3> Edit Profile </h3>
+                <div className = "profile-form">
+                    <form class="ui-form" onSubmit={(event) => this.updateUser(event)}>
+                        {this.state.isUpdated && <div className="text-danger mt-2" >User has been updated</div> }
+                        {this.state.isDeleted && <div className="text-danger mt-2" >User profile has been deleted</div> }
+                        <label>Username</label>
+                        <div id= "form-content">
+                        <label><b>Edit Username:</b></label>
+                        < br/>
+                        <input
+                            value={this.state.username}
+                            type="text"
+                            name="username"
+                            v-validate="required"
+                        />
+                        < br/>
+                        <label><b>Change location:</b></label>
+                        < br/>
+                        <CityChooser 
+                            onChange={this.editUser}
+                        />
+                        <br /><br/>
+                        <input 
                         type="submit" 
-                        value="Update Profile" 
-                    />
-                    <br />
-                    <input 
-                        onClick = {(event) => this.deleteUser(event)}
+                        value="Update Profile" />
+                        <br /> <br/>
+                        <input 
+                        onClick = {this.deleteUser}
                         type="submit" 
-                        value="Delete Profile" 
-                    />
-                </form>
-            </div>
+                        value="Delete Profile" />
+                        </div>
+                    </form>
+                    </div>
+                </div>
         )
     }
 }
 
 export default Profile
+
+
+// 

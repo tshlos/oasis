@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker} from 'google-maps-react';
+import logo from './oasis.logo1.png'
+
 
 // let iconMarker = 
-const mapStyles = {
-  width: '32%',
-  height: '85%'
-};
+// const mapStyles = {
+//   width: '66%',
+//   height: '85%'
+// };
+
 
 export class MapContainer extends Component {
 
@@ -44,8 +47,10 @@ export class MapContainer extends Component {
 
   makePins = () => {
     return this.state.pins.map(pin => {
-      return <Marker onClick={this.props.sortCard} name={pin.name} key={pin.id} pin={pin}
-      position={{ lat: pin.lat, lng: pin.lng }}
+      return <Marker icon={{
+        url: logo}} 
+        onClick={this.props.sortCard} name={pin.name} key={pin.id} pin={pin}
+        position={{ lat: pin.lat, lng: pin.lng }}
       />
     })
   }
@@ -64,7 +69,7 @@ export class MapContainer extends Component {
       <Map
         google={this.props.google}
         zoom={14}
-        style={mapStyles}
+        // style={mapStyles}
         initialCenter={
 
           // at some point well need a if else statement to determine if the user is in SF or SEA

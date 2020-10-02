@@ -65,7 +65,9 @@ class ParkContainer extends Component {
                     />
                 </div>
                 <div className="map">
+                    <div className="map-position">
                     <MapContainer parks={this.state.parks} sortCard={this.sortCard} />
+                    </div>
                 </div>
             </div>
         );
