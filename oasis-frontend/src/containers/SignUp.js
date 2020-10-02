@@ -70,7 +70,7 @@ class SignUp extends Component {
                     <br />
                     <CityChooser onChange={this.handleChange} />
                     <br />
-                    <input type="submit" value="Submit" />
+                    <input className="login-signup-buttons" type="submit" value="Submit" />
                     {this.state.isInvalid && <div className="text-danger mt-2" >Username has already been taken</div>}
                 </form>
             </div>

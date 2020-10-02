@@ -81,11 +81,11 @@ class Profile extends Component {
                             onChange={this.editUser}
                         />
                         <br /><br/>
-                        <input 
+                        <input className="sumbit-buttons"
                         type="submit" 
                         value="Update Profile" />
                         <br /> <br/>
-                        <input 
+                        <input className="sumbit-buttons"
                         onClick = {this.deleteUser}
                         type="submit" 
                         value="Delete Profile" />

@@ -111,9 +111,8 @@ margin-left:160px
 
 .profile-form {
   margin: 5% 35% 5% 35%;
-  height: 50px;
-  height: 320px;
-  padding: 0px;
+  
+  
   /* border: 1px solid grey; */
   opacity: .95;
   -webkit-box-shadow: 7px 10px 20px -4px rgba(0,0,0,0.75);
@@ -123,6 +122,49 @@ margin-left:160px
 
 .profile-form label {
   color: #1A0035;
+}
+
+.ui-form {
+  margin-bottom: 50px;
+}
+.sumbit-buttons {
+  background-color: white;
+  border-radius: 3px;
+  width: 120px;
+  border: .5px solid  #1A0035;
+
+}
+.sumbit-buttons:hover {
+background-color: #1A0035;
+color: white;
+border-radius: 3px ;
+
+ width: 125px;
+height: 30px;
+transition: all .1s
+}
+.login-signup-buttons:hover {
+  background-color: #1A0035;
+color: white;
+border-radius: 3px ;
+
+ width: 80px;
+height: 30px;
+transition: all .1s
+}
+.login-signup-buttons {
+  margin-top: 5px;
+  
+  background-color: white;
+  border-radius: 3px;
+  width: 75px;
+  border: .5px solid  #1A0035;
+
+}
+
+.dropdown:hover {
+  background-color: #1A0035;
+  color: white;
 }
 /* #profile-content {
 margin-bottom: 500px;

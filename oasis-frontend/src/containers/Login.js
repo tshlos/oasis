@@ -61,7 +61,7 @@ class Login extends Component {
                         onChange={this.handleChange} 
                     />
                     <br />
-                    <input type="submit" value="Login" />
+                    <input className="login-signup-buttons" type="submit" value="Login" />
                     {this.state.isInvalid && <div className="text-danger mt-2" >Invalid Username and Password</div> }
                 </form>
             </div>
