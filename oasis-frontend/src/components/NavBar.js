@@ -13,25 +13,11 @@ class NavBar extends Component {
         sessionStorage.clear();
         window.location.href = '/';
     }
-    // async componentDidMount() {
-    //     const resp = await fetch(usersURL);
-    //     const users = await resp.json();
-    //     this.setState({ users: users});
-    //     let id = sessionStorage.getItem("Login")
-    //     let match = users.filter((user) => user.id == id)
-    //     console.log(match[0].username)
-    //     // this.setState({name: match[0].username})
-        
-    // }
-    
-    // getName = (users) => {
-    //     console.log(sessionStorage.getItem("Login"))
-       
-    // }
+
     
     
     render() {
-        console.log(sessionStorage.Username)
+        // console.log(sessionStorage.Username)
        
         return (
             <div className="navbar">

@@ -17,6 +17,7 @@ class Profile extends Component {
         const resp = await fetch(usersURL);
         const users = await resp.json();
         this.setState({ users: users });
+        
     }
 
 
@@ -27,6 +28,9 @@ class Profile extends Component {
             city_id: event.target.city.value
         }
         let id = sessionStorage.getItem('Login')
+        let username = sessionStorage.setItem('Username', user.username)
+        console.log(username)
+        // console.log(username)
         const resp = await fetch(`http://localhost:3000/api/v1/users/${id}`, {
             method: 'PATCH',
             headers: {
