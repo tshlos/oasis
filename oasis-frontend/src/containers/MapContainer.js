@@ -34,16 +34,6 @@ export class MapContainer extends Component {
     });
 
 
-// pinClick = (pin) => {
-//   // debugger
-//   console.log(this)
-//   // console.log(pin)
-//   this.setState({selectedPlace: pin,
-//     activeMarker: pin,
-//     showingInfoWindow: true
-//   // debugger
-// })
-// }
 
   makePins = () => {
     return this.state.pins.map(pin => {
@@ -101,5 +91,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyCImv_H9oVXgnaabNXsR9jzrwWcOHiXH_g'
+  apiKey: ENV['GOOGLE_MAPS_KEY']
 })(MapContainer);
