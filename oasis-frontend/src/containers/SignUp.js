@@ -20,7 +20,6 @@ class SignUp extends Component {
         })   
     }
 
-
     handleSignUp = async (e, userInfo) => {
         e.preventDefault()
         const user = {
