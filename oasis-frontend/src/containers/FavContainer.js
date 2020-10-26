@@ -6,21 +6,8 @@ import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
 
 class FavContainer extends Component{
-    // renderFavorites = () => {
-    //     return this.props.favorites.map(favorite => {
-    //        return <FrontCard park={favorite} key={favorite.id} addFavorite={this.props.addFavorite}  />
-    //    })
-    //    }
-
-    
 
     render(){
-        // return (
-        //  <div>
-        //     {this.renderFavorites()}
-        // </div>
-        // )
-
         return (
             <div>
                 <div className="fav-header"><h4>Favorites</h4><p id="remove-fav">(click card to remove favorite)</p></div>
@@ -46,7 +33,6 @@ class FavContainer extends Component{
                                     style={{ backgroundColor: '#ffffff' }}>
                                     <BackCard 
                                         park={favorite} 
-                                        // onReviewClick={this.props.onReviewClick}
                                     />
                                 </BackSide>
                                 </Flippy>

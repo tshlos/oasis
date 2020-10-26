@@ -20,7 +20,6 @@ class Profile extends Component {
         
     }
 
-
     updateUser = async (event) => {
         event.preventDefault();
         const user = {
@@ -30,7 +29,6 @@ class Profile extends Component {
         let id = sessionStorage.getItem('Login')
         let username = sessionStorage.setItem('Username', user.username)
         console.log(username)
-        // console.log(username)
         const resp = await fetch(`http://localhost:3000/api/v1/users/${id}`, {
             method: 'PATCH',
             headers: {
@@ -68,7 +66,6 @@ class Profile extends Component {
                     <form class="ui-form" onSubmit={(event) => this.updateUser(event)}>
                         {this.state.isUpdated && <div className="text-danger mt-2" >User has been updated</div> }
                         {this.state.isDeleted && <div className="text-danger mt-2" >User profile has been deleted</div> }
-                        {/* <label>Username</label> */}
                         <div id= "form-content">
                         <label><b>Edit Username:</b></label>
                         < br/>
@@ -102,6 +99,3 @@ class Profile extends Component {
 }
 
 export default Profile
-
-
-// 
