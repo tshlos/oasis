@@ -1,4 +1,4 @@
-# oasis
+# Oasis
 
 ## Description
 Oasis helps users find free and accesible hidden rooftop bars and it's location on a map.
