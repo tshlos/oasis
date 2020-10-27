@@ -5,15 +5,15 @@ Oasis helps users find free and accesible hidden rooftop bars and it's location 
 
 
 ## Installation
-Fork or clone the respository. 
-Cd into the frontend repo and run the following:
-`$ npm install`
-`$ npm start`
+1. Fork or clone the respository. 
+2. Cd into the frontend repo and run the following:
+- `$ npm install`
+- `$ npm start`
 
-Cd into the backend and run the following:
-`$ bundle install`
-`$ rails db:migrate`
-`$ rails server`
+3. Cd into the backend and run the following:
+- `$ bundle install`
+- `$ rails db:migrate`
+- `$ rails server`
 
 
 ## Features
