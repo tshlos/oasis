@@ -17,16 +17,16 @@ Oasis helps users find free and accesible hidden rooftop bars and it's location 
 
 
 ## Features
-1. Account
+### 1. Account
   - Login/Sign up
   - Update username
   - Delete account
 
-2. Favorites list
+### 2. Favorites list
   - Add cards to favorites
   - Delete cards from favorites
 
-3. Find location on the map
+### 3. Find location on the map
   - Click on pins to redirect to a card
  
  ## Demo
